@@ -1,0 +1,262 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/vazirmatn/wght.css';
+
+/*
+ * سنجاق — Design tokens (فاز ۵ / V1)
+ * جهت هنری: Calm Expressive Enterprise × Editorial Precision.
+ * رنگ برند فقط برای اقدام اصلی، انتخاب، فوکوس و هوش مصنوعی؛ بقیهٔ رابط خنثی است.
+ * همهٔ جفت‌رنگ‌های متن/زمینه در docs/DESIGN_SYSTEM.md با نسبت کنتراست ثبت شده‌اند.
+ */
+@theme {
+  --font-sans: 'Vazirmatn Variable', 'Vazirmatn', Tahoma, system-ui, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* سطوح: زمینهٔ کِرِمی-خاکستری و کاشی‌های گرم */
+  --color-canvas: #ebeae6;
+  --color-surface: #f8f7f4;
+  --color-sunken: #e2e1db;
+  --color-hover: #f0efea;
+  --color-line: #dcdad2;
+  --color-line-strong: #c6c3b9;
+  /* مرز کنترل‌های فرم: نسبت ≥ ۳ به ۱ با زمینهٔ کاشی */
+  --color-field: #7d7b73;
+
+  /* متن */
+  --color-ink: #101015;
+  --color-ink-soft: #3a3941;
+  --color-on-ink: #ffffff;
+  --color-muted: #5b5a62;
+
+  /* برند: اقدام اصلی مشکی است؛ بنفش فقط فوکوس و هوش مصنوعی */
+  --color-brand: #6858f5;
+  --color-brand-hover: #5a49e6;
+  --color-brand-pressed: #4c3cd0;
+  --color-brand-soft: #ddd8fa;
+  --color-brand-ink: #382d85;
+  --color-brand-line: #c4bcf3;
+
+  --color-ai: #382d85;
+  --color-ai-soft: #ddd8fa;
+  --color-ai-line: #c4bcf3;
+
+  /* پالت پاستلی کاشی‌ها (با متن تیره‌تر هم‌خانواده) */
+  --color-lime: #dcec6c;
+  --color-lime-ink: #404a0b;
+  --color-lav: #cdc6f6;
+  --color-lav-ink: #382d85;
+  --color-pink: #f6c6e2;
+  --color-pink-ink: #6a2354;
+  --color-sky: #bfdaf2;
+  --color-sky-ink: #214966;
+  --color-org: #ffbd8f;
+  --color-org-ink: #6b3205;
+  --color-mint: #c4ead3;
+  --color-mint-ink: #1b5a3c;
+  --color-coral: #ff8f86;
+  --color-coral-ink: #7a1f19;
+
+  /* وضعیت‌ها */
+  --color-ok: #1b5a3c;
+  --color-ok-soft: #c4ead3;
+  --color-ok-line: #a5d9bb;
+  --color-ok-solid: #25846c;
+  --color-err-solid: #c23b32;
+  --color-warn: #6b3205;
+  --color-warn-soft: #ffd9bd;
+  --color-warn-line: #ffbd8f;
+  --color-err: #7a1f19;
+  --color-err-soft: #ffcfca;
+  --color-err-line: #ff9f98;
+
+  /* شکل */
+  --radius-card: 22px;
+  --radius-control: 14px;
+
+  /* ارتفاع (سایه‌های کم‌دامنه) */
+  --shadow-card: none;
+  --shadow-raised: 0 1px 2px rgb(16 16 21 / 0.06), 0 8px 24px rgb(16 16 21 / 0.07);
+  --shadow-pop: 0 12px 32px rgb(23 25 35 / 0.14);
+
+  /* مقیاس تایپوگرافی فارسی: اندازه/ارتفاع خط/وزن */
+  --text-display: 2.25rem;
+  --text-display--line-height: 1.4;
+  --text-display--font-weight: 800;
+  --text-title: 1.625rem;
+  --text-title--line-height: 1.5;
+  --text-title--font-weight: 800;
+  --text-heading: 1.25rem;
+  --text-heading--line-height: 1.6;
+  --text-heading--font-weight: 700;
+  --text-section: 1.0625rem;
+  --text-section--line-height: 1.7;
+  --text-section--font-weight: 700;
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.85;
+  --text-ui: 0.875rem;
+  --text-ui--line-height: 1.7;
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.75;
+  --text-label: 0.75rem;
+  --text-label--line-height: 1.6;
+  --text-label--font-weight: 600;
+  --text-numeric: 1.875rem;
+  --text-numeric--line-height: 1.3;
+  --text-numeric--font-weight: 800;
+
+  /* حرکت */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 320ms;
+}
+
+:root {
+  color-scheme: light;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: color-mix(in oklab, var(--color-brand) 14%, transparent);
+    /* هدر چسبان فوکوس و لنگر را نپوشاند */
+    scroll-padding-top: 7.5rem;
+  }
+  a,
+  button,
+  summary,
+  label,
+  input,
+  select,
+  textarea,
+  [role='radio'] {
+    touch-action: manipulation;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  dialog {
+    overscroll-behavior: contain;
+  }
+  body {
+    font-variant-numeric: tabular-nums;
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    margin: 0;
+    min-height: 100dvh;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  ::selection {
+    background: var(--color-brand-soft);
+  }
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+  /* متن لاتین/کد داخل متن فارسی جهت مستقل خودش را حفظ کند */
+  bdi,
+  .ltr {
+    unicode-bidi: isolate;
+  }
+  .ltr {
+    direction: ltr;
+    display: inline-block;
+  }
+  dialog::backdrop {
+    background: rgb(23 25 35 / 0.45);
+  }
+}
+
+/* مرز و فوکوس یکدست کنترل‌های فرم (بیرون از لایه‌ها تا بر کلاس‌های ابزاری غلبه کند؛ حالت خطا مستثنا است) */
+input:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='range']):not([aria-invalid='true']),
+textarea:not([aria-invalid='true']),
+select:not([aria-invalid='true']) {
+  border-color: var(--color-field);
+  transition: border-color var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
+}
+input:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='range']):not([aria-invalid='true']):hover,
+textarea:not([aria-invalid='true']):hover,
+select:not([aria-invalid='true']):hover {
+  border-color: var(--color-ink);
+}
+input:not([type='checkbox']):not([type='radio']):not([type='file']):not([type='range']):not([aria-invalid='true']):focus-visible,
+textarea:not([aria-invalid='true']):focus-visible,
+select:not([aria-invalid='true']):focus-visible {
+  border-color: var(--color-brand);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-brand) 25%, transparent);
+  outline-offset: 0;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+@keyframes bar {
+  from {
+    transform: scaleX(0.04);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes node-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-ink) 30%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 5px transparent;
+  }
+}
+
+.fade-up {
+  animation: fade-up var(--duration-slow) var(--ease-out) both;
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--color-sunken) 25%, var(--color-hover) 37%, var(--color-sunken) 63%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+  border-radius: 8px;
+}
+.node-current {
+  animation: node-pulse 2.4s ease-in-out infinite;
+}
+
+
+/* کاهش حرکت: حرکت جابه‌جایی و حلقه‌ها خاموش می‌شود، اما تغییر رنگ و شفافیت حالت‌ها (hover، فوکوس، انتخاب) با همان زمان کوتاه می‌ماند */
+@media (prefers-reduced-motion: reduce) {
+  .fade-up,
+  .skeleton,
+  .node-current {
+    animation: none;
+  }
+  * {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* تصویرسازی‌های Genillu: خط سیاه با پس‌زمینهٔ شفاف */
+.illus{pointer-events:none}

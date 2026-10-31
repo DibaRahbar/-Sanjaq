@@ -1,0 +1,21 @@
+# سنجاق — راهنمای کار روی این Repository
+
+- محصول: سنجاق، لایهٔ تصمیم برای استودیوهای طراحی. فاز ۴ = پروتوتایپ Medium-Fi در پنج Milestone (W1 تا W5)؛ فاز ۵ = High-Fi و Design System. پس از هر Milestone توقف و منتظر تأیید صاحب محصول بمانید.
+- متن رابط فارسی و RTL است. از ویژگی‌های منطقی Tailwind (`ms-`, `ps-`, `start-`) استفاده کنید. شناسهٔ لاتین (مثل `v1`) را با `ltr()` از `src/lib/format.ts` از جهت جمله جدا کنید. ارقام نمایشی با `fa()`.
+- منطق دامنه در `src/domain` و Reducer در `src/state/reducer.ts` خالص و تست‌شده است؛ Guardها (قفل Baseline، نقش، idempotency) باید در Reducer بمانند، نه فقط در UI.
+- خروجی AI فقط Draft با شاهد و «نامشخص» است. برای بریف خارج از نمونه، خروجی جعلی نسازید.
+- داده‌ها ساختگی‌اند و Backend نداریم؛ هر چیز Mock باید در UI یا README صریح گفته شود.
+- قبل از تحویل: `npm run typecheck && npm test && npm run build`.
+- Utility های Tailwind متعارض (مثل `hidden` با `inline-flex` روی یک المان) را روی یک المان ترکیب نکنید؛ از Wrapper استفاده کنید.
+- بازخورد و Pin همیشه به یک `versionId` وصل‌اند؛ Pin با مختصات نرمال‌شده (۰ تا ۱) ذخیره می‌شود. تصمیم نهایی ویرایش نمی‌شود؛ تصمیم جدید با `supersedesId` جایگزین می‌شود. نسخهٔ منتشرشده (`client_review`) ثابت است.
+- «اقدام بعدی» نمای کلی و زمان‌بندی از داده مشتق می‌شوند (`src/domain/project.ts`)؛ وضعیت جداگانه نگه ندارید.
+- صفحه‌های `/client/*` فقط از `useClientAccess` (Projection در `src/domain/client.ts`) داده می‌گیرند؛ هرگز مستقیم از `Project` نخوانید. Receipt فقط در Reducer ساخته می‌شود، با `rcp_<versionId>` و بدون بازنویسی.
+- Change Request فقط بعد از Receipt ساخته می‌شود و به `baselineId`/`receiptId` وصل می‌ماند. نسخهٔ پیشنهاد (`ProposalVersion`) بعد از ارسال تغییر نمی‌کند. ساعت داخلی، یادداشت‌ها و طبقه‌بندی هرگز وارد Projection مشتری نمی‌شوند (تست دارد). Revision مستقیم Baseline بعد از Receipt ممنوع است؛ فقط پذیرش پیشنهاد Baseline جدید می‌سازد.
+- QA: `docs/QA.md`. قبل از هر تغییر بزرگ UI، axe را روی مسیرها در سه عرض اجرا کنید. متن کم‌رنگ فقط با `text-muted` (نه `/70`) و هر Dialog با `Dialog` بومی ساخته شود. هر صفحهٔ جدید `useDocumentTitle` و در صورت نیاز `useSimulatedLoad` دارد.
+- فاز ۵ (V1): توکن‌ها و پله‌های تایپوگرافی در `src/index.css` (به‌جای اندازهٔ دلخواه از `text-body`, `text-caption`, … استفاده کنید). اقدام اصلی = `Button variant=primary` (رنگ برند)؛ وضعیت = `Badge dot`. جزئیات: `docs/DESIGN_SYSTEM.md`. صفحهٔ نمونه: `/dev/design-system` (فقط توسعه).
+- جهت بصری فعلی: کِرِمی + کاشی پاستلی + قرص مشکی (docs/DESIGN_SYSTEM.md). متن ثانویه روی کاشی رنگی `text-ink-soft` (نه `text-muted`)؛ دکمهٔ اصلی مشکی است.
+- فقط تم روشن (نسخهٔ تیره حذف شده): رنگ را فقط از توکن‌ها بگیرید؛ متن روی `bg-ink` = `text-on-ink`، نه `text-white` یا hex ثابت. آیکون فقط از `components/ui/Icon.tsx` (Phosphor)؛ تصویر فقط از `components/ui/Illus.tsx` (فایل‌ها از پوشهٔ Genillu در `src/assets/illustrations`). هر تغییر UI را با axe بسنجید.
+- ورود نمایشی: `/login` پیش از پنل (`RequireSession` در `src/router.tsx`، نشست در `src/lib/session.ts`). فقط نشانهٔ «واردشده» ذخیره می‌شود؛ رمز هرگز بررسی یا ذخیره نمی‌شود و این احراز هویت واقعی نیست (در UI گفته شده). نقش و نام کاربر در `AppState.role` و `actor` می‌مانند و نام ثبت‌کنندهٔ اقدام‌ها از `actorOf(state)` می‌آید، نه مستقیم از `DEMO_ACTOR_NAME[role]`. مسیرهای `/client/*` بدون ورود‌اند. برای اجرای axe روی صفحه‌های استودیو اول `localStorage.setItem('sanjaq.session','1')` بزنید.
+- اندازهٔ متن فقط با توکن‌های `text-*` (از جمله `text-ui` = ۱۴)؛ `text-[13px]` و مانند آن ممنوع. آیکون ۱۴/۱۶/۱۸/۲۰، شعاع فقط `rounded-control|card|full`.تصویر هرگز روی متن نیفتد (Banner و کاشی آمار بدون تصویرند). گرافیک با کد نکشید.
+- نقش‌های ورود برابر اعضای تیم‌اند (`ROSTER` در `src/domain/fixtures.ts`: ۹ نقش؛ هر عضو یک حساب نمایشی و یک `role` سطح دسترسی دارد). ورود با هر نقش = حساب همان عضو؛ کاربر آواتار را از ۳۶ پرتره برمی‌گزیند (`setPortraitChoice`، کلید `sanjaq.avatars`) و `portraitFor(name)` در همهٔ صفحه‌ها همان را نشان می‌دهد. منوی بالا هم «تغییر حساب» میان همین ۹ نقش است.
+- کلیدهای ذخیره‌سازی همه `sanjaq.*` هستند (`sanjaq.demo.v1`، `sanjaq.draft.newProject`، `sanjaq.session`، `sanjaq.avatars`)؛ کلیدهای قدیمی `atelier.*` یک بار مهاجرت می‌شوند. عمل مخرب نمایشی (پاک‌کردن پروژه‌ها، بازگرداندن داده) همیشه Dialog تأیید دارد. کنترل تعاملی اصلی حداقل ۴۴px (`min-h-11`)؛ `min-h-10` فقط برای `Button size=sm`.

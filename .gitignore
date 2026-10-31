@@ -1,0 +1,16 @@
+node_modules
+dist
+*.local
+.DS_Store
+.superpowers/
+dist-static
+dist-artifact
+sanjaq-dist.zip
+
+# build and tool artifacts
+tsconfig.tsbuildinfo
+.claude/
+product-showcase/public/audio/reel.wav
+
+# Reel project (kept local only)
+product-showcase/
