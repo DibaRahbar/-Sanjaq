@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>سنجاق — کیس استادی</title>
+<style>
+@font-face{font-family:Vazir;src:url(vazirmatn-arabic-wght-normal.woff2) format('woff2');font-weight:100 900;unicode-range:U+0600-06FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE80-FEFC}
+@font-face{font-family:Vazir;src:url(vazirmatn-latin-wght-normal.woff2) format('woff2');font-weight:100 900;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215}
+:root{--canvas:#ebeae6;--surface:#f8f7f4;--ink:#101015;--soft:#3a3941;--muted:#5b5a62;--lime:#dcec6c;--lav:#cdc6f6;--pink:#f6c6e2;--sky:#bfdaf2;--org:#ffbd8f;--mint:#c4ead3;--coral:#ff8f86;--brand:#6858f5}
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:Vazir,sans-serif;color:var(--ink);background:var(--canvas);font-size:11.5pt;line-height:1.95}
+.page{width:210mm;height:297mm;padding:16mm 16mm 14mm;position:relative;overflow:hidden;page-break-after:always;background:var(--canvas)}
+.page:last-child{page-break-after:auto}
+.foot{position:absolute;bottom:7mm;inset-inline:16mm;display:flex;justify-content:space-between;font-size:8.5pt;color:var(--muted)}
+h1{font-size:46pt;line-height:1.25;font-weight:800;letter-spacing:-.5px}
+h2{font-size:21pt;line-height:1.5;font-weight:800;margin-bottom:3mm}
+h3{font-size:13pt;font-weight:700;margin-bottom:1.5mm;line-height:1.6}
+p{color:var(--soft);margin-bottom:3mm}
+.kicker{display:inline-block;font-size:9.5pt;font-weight:700;background:var(--ink);color:#f8f7f4;border-radius:99px;padding:0 4mm;line-height:2.1;margin-bottom:4mm}
+.tile{border-radius:6mm;padding:6mm 7mm}
+.t-lime{background:var(--lime)}.t-lav{background:var(--lav)}.t-pink{background:var(--pink)}.t-sky{background:var(--sky)}.t-org{background:var(--org)}.t-mint{background:var(--mint)}.t-sur{background:var(--surface)}
+.tile p,.tile li{color:#2b2a31}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}
+.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-top:10mm}
+.meta div{background:var(--surface);border-radius:5mm;padding:4mm 5mm;font-size:10pt;line-height:1.7}
+.meta b{display:block;font-size:8.5pt;color:var(--muted);font-weight:500}
+ul{padding-inline-start:5mm;margin-bottom:3mm}li{margin-bottom:1.5mm;color:var(--soft)}
+figure{margin:4mm 0}
+figure img{width:100%;display:block;border-radius:4mm;border:1px solid #d6d5cf}
+figcaption{font-size:9.5pt;color:var(--muted);margin-top:2mm;line-height:1.7}
+.chain{display:flex;gap:2.2mm;margin:5mm 0}
+.chain span{flex:1;text-align:center;font-weight:700;font-size:9.5pt;border-radius:99px;padding:1.5mm 0;background:var(--surface)}
+.chain span:nth-child(1){background:var(--lav)}.chain span:nth-child(2){background:var(--lav)}.chain span:nth-child(3){background:var(--sky)}.chain span:nth-child(4){background:var(--org)}.chain span:nth-child(5){background:var(--pink)}.chain span:nth-child(6){background:var(--mint)}.chain span:nth-child(7){background:var(--lime)}
+.q{font-size:14pt;font-weight:700;line-height:1.8;border-inline-start:1.2mm solid var(--brand);padding-inline-start:5mm;margin:5mm 0;color:var(--ink)}
+.num{font-size:34pt;font-weight:800;line-height:1.2}
+.lab{font-size:9.5pt;color:#2b2a31}
+table{width:100%;border-collapse:collapse;font-size:10pt;margin-bottom:3mm}
+td,th{padding:2mm 3mm;text-align:start;border-bottom:1px solid #d3d2cc;vertical-align:top;line-height:1.7}
+th{font-weight:700;color:var(--muted);font-size:9pt}
+.sw{display:flex;gap:2mm;margin:3mm 0}.sw i{flex:1;height:11mm;border-radius:3mm;display:block}
+.cols{display:grid;grid-template-columns:1fr 84mm;gap:7mm;align-items:start}
+.phones{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.phones img{width:100%;border-radius:5mm;border:1px solid #d6d5cf}
+.note{font-size:9.5pt;color:var(--muted)}
+code,bdi{font-family:Vazir,sans-serif}
+</style>
+</head>
+<body>
+
+<!-- ۱. جلد -->
+<section class="page" style="background:var(--lime)">
+  <div style="margin-top:14mm"><span class="kicker">کیس استادی · طراحی محصول</span></div>
+  <h1 style="margin-top:6mm">سنجاق</h1>
+  <div style="font-size:23pt;font-weight:700;line-height:1.7;margin-top:3mm;max-width:150mm">دفتر تصمیم‌های استودیوی طراحی؛<br>از بریف تا تأیید مشتری، همه‌چیز یک‌جا و قابل‌پیگیری</div>
+  <p style="font-size:12.5pt;margin-top:8mm;max-width:140mm;color:#2b2a31">«این تصمیم را کی و چرا گرفتیم؟» و «مشتری دقیقاً کدام نسخه را تأیید کرد؟» پرسش‌هایی هستند که سنجاق باید در چند ثانیه جواب بدهد.</p>
+  <div class="meta" style="grid-template-columns:repeat(2,1fr);max-width:140mm">
+    <div><b>پلتفرم</b>وب، فارسی و راست‌به‌چپ</div>
+    <div><b>وضعیت</b>پروتوتایپ تعاملی (Medium-Fi ← High-Fi)</div>
+    <div><b>برای چه کسانی</b>استودیوهای طراحی و مشتری‌هایشان</div>
+    <div><b>داده</b>ساختگی؛ بدون Backend</div>
+  </div>
+  <div class="chain" style="position:absolute;bottom:38mm;inset-inline:16mm"><span>بریف</span><span>محدوده</span><span>نسخه و بازخورد</span><span>تصمیم</span><span>تأیید مشتری</span><span>رسید</span><span>تغییر</span></div>
+  <div style="position:absolute;bottom:16mm;inset-inline:16mm;display:flex;justify-content:space-between;align-items:flex-end">
+    <div class="note" style="color:#2b2a31">نمونهٔ زنده: dibarahbar.github.io/Sanjaq</div>
+    <div style="font-size:9.5pt;color:#2b2a31">آبان ۱۴۰۵</div>
+  </div>
+</section>
+
+<!-- ۲. خلاصه و مسئله -->
+<section class="page">
+  <span class="kicker">۰۱ · مسئله</span>
+  <h2>تصمیم‌ها در چت و ایمیل گم می‌شوند</h2>
+  <p>در استودیوی طراحی، هر پروژه صدها تصمیم کوچک دارد: کدام نسخه نهایی است، چرا رنگ وضعیت عوض شد، آیا فلان درخواست جزو قرارداد بود یا نه. این اطلاعات معمولاً بین ایمیل، چت و فایل‌های طراحی پراکنده است. وقتی مشتری می‌گوید «این را نخواسته بودیم»، تیم باید بین پیام‌ها دنبال شاهد بگردد.</p>
+  <div class="grid2" style="margin:6mm 0">
+    <div class="tile t-lav"><h3>چهار پرسشی که هر پروژه بارها می‌شنود</h3><ul><li>نسخهٔ آخر کدام است؟</li><li>آن تصمیم را کی گرفتیم؟</li><li>تأییدیه‌اش کجاست؟</li><li>این تغییر جزو قرارداد بود؟</li></ul></div>
+    <div class="tile t-org"><h3>هزینهٔ این پراکندگی</h3><p>تأیید شفاهی یا «لایک» در چت سند نیست؛ تغییر بعد از تأیید بدون ردپاست؛ و مشتری نمی‌داند دقیقاً چه چیزی را پذیرفته است.</p></div>
+  </div>
+  <div class="q">سنجاق لایهٔ تصمیم است: نه ابزار طراحی و نه مدیریت وظیفه؛ جایی که «چه، چرا، توسط چه کسی و روی کدام نسخه» ثبت می‌شود.</div>
+  <h3>هدف محصول</h3>
+  <ul>
+    <li>هر بازخورد و تصمیم همیشه به یک نسخهٔ مشخص از طرح وصل باشد.</li>
+    <li>تأیید مشتری صریح، قابل‌اثبات و دارای رسید باشد.</li>
+    <li>هر تغییر بعد از تأیید، مسیر جدا و ردپای جدا داشته باشد.</li>
+    <li>خروجی هوش مصنوعی هرگز جای قضاوت انسان را نگیرد.</li>
+  </ul>
+  <div class="tile t-sur" style="margin-top:5mm"><p class="note" style="margin:0"><b>صداقت دربارهٔ دامنه:</b> مسئله از بریف محصول و تجربهٔ کار استودیویی استخراج شده است و این پروژه با مصاحبه یا آزمون با کاربر واقعی اعتبارسنجی نشده. در بخش «محدودیت‌ها» توضیح داده‌ام چه چیزهایی هنوز نیاز به آزمون دارند.</p></div>
+  <div class="foot"><span>سنجاق · کیس استادی</span><span>۲</span></div>
+</section>
+
+<!-- ۳. ایده -->
+<section class="page">
+  <span class="kicker">۰۲ · راه‌حل</span>
+  <h2>زنجیرهٔ تصمیم: ستون فقرات محصول</h2>
+  <p>هر پروژه در سنجاق یک زنجیره دارد. هر حلقه فقط وقتی بسته می‌شود که حلقهٔ قبل بسته شده باشد و هر حلقه به نسخه و تصمیم مشخصی ارجاع دارد.</p>
+  <div class="chain"><span>بریف</span><span>محدوده</span><span>نسخه و بازخورد</span><span>تصمیم</span><span>تأیید مشتری</span><span>رسید</span><span>تغییر</span></div>
+  <figure><img src="img/d-list.jpg"><figcaption>فهرست پروژه‌ها: جملهٔ خلاصهٔ زنده («۳ پروژه به اقدام شما نیاز دارد و ۱ پروژه منتظر پاسخ مشتری است») و زنجیره‌ای که پیشرفت هر پروژه را به‌صورت زمان‌بندی نشان می‌دهد. «اقدام بعدی» از داده مشتق می‌شود و وضعیت جداگانه‌ای نگه داشته نمی‌شود.</figcaption></figure>
+  <div class="grid3">
+    <div class="tile t-lime"><h3>برای تیم</h3><p style="margin:0;font-size:10.5pt;line-height:1.8">اول صبح مشخص است کدام پروژه مسدود است و قدم بعد چیست.</p></div>
+    <div class="tile t-pink"><h3>برای مشتری</h3><p style="margin:0;font-size:10.5pt;line-height:1.8">یک لینک ساده برای دیدن نسخهٔ منتشرشده و تأیید یا درخواست اصلاح.</p></div>
+    <div class="tile t-mint"><h3>برای بعدها</h3><p style="margin:0;font-size:10.5pt;line-height:1.8">رسید و دفتر تصمیم‌ها، مرجعی قابل‌ارجاع در اختلاف‌هاست.</p></div>
+  </div>
+  <div class="foot"><span>سنجاق · کیس استادی</span><span>۳</span></div>
+</section>
+
+<!-- ۴. بریف و AI -->
+<section class="page">
+  <span class="kicker">۰۳ · بریف و محدوده</span>
+  <h2>هوش مصنوعی پیشنهاد می‌دهد، انسان تأیید می‌کند</h2>
+  <p>بریف خام مشتری به‌ندرت کامل است. سنجاق از متن بریف هدف، مخاطب و معیار پذیرش را استخراج می‌کند، اما با قواعد سخت‌گیرانه.</p>
+  <figure><img src="img/d-brief.jpg"><figcaption>هر مورد پیشنهادی AI برچسب «پیشنهاد AI»، شاهد (جمله‌ای از خود بریف با لینک به متن) و وضعیت «هنوز تأیید نشده» دارد. آنچه بریف نگفته «نامشخص» می‌ماند و در «ابهام‌ها و سؤال‌های باز» جمع می‌شود.</figcaption></figure>
+  <div class="grid2">
+    <div class="tile t-lav"><h3>قواعد طراحی‌شده برای اعتماد</h3>
+      <ul style="margin:0"><li>خروجی AI فقط پیش‌نویس است.</li><li>هر ادعا شاهد دارد؛ بدون شاهد، «نامشخص».</li><li>برای بریف خارج از نمونه، خروجی جعلی ساخته نمی‌شود.</li></ul></div>
+    <div class="tile t-org"><h3>ابهام حیاتی، تأیید را مسدود می‌کند</h3><p style="margin:0">تا ابهام‌های حیاتی (مثل «معیار پذیرش چیست؟») با پاسخ مشتری یا فرض ثبت‌شده بسته نشوند، محدوده تأیید نمی‌شود. با تأیید، <bdi dir="ltr">Baseline v1</bdi> ساخته و قفل می‌شود.</p></div>
+  </div>
+  <h3 style="margin-top:5mm">چرا این تصمیم؟</h3>
+  <p>اگر AI بی‌شاهد «بنویسد»، تیم یا به آن بیش‌ازحد اعتماد می‌کند یا کلاً نادیده‌اش می‌گیرد. برچسب منبع و وضعیت «تأییدنشده» کار بازبینی را سریع و مسئولیت را روشن نگه می‌دارد. این قفل فقط در UI نیست؛ در منطق دامنه (Reducer) هم اعمال می‌شود تا با هیچ مسیر دیگری دور زده نشود.</p>
+  <div class="foot"><span>سنجاق · کیس استادی</span><span>۴</span></div>
+</section>
+
+<!-- ۵. بازبینی طرح -->
+<section class="page">
+  <span class="kicker">۰۴ · بازبینی طرح</span>
+  <h2>بازخورد همیشه به یک نسخه وصل است</h2>
+  <figure><img src="img/d-review.jpg"><figcaption>صفحهٔ بازبینی: هر Pin روی طرح با مختصات نرمال‌شده (۰ تا ۱) ذخیره می‌شود، پس با تغییر اندازهٔ تصویر سر جایش می‌ماند. بازخورد مسدودکننده بالای صفحه هشدار می‌دهد و انتشار برای مشتری را متوقف می‌کند.</figcaption></figure>
+  <div class="grid2">
+    <div><h3>نسخه‌ها ثابت‌اند</h3><p>نسخهٔ منتشرشده برای مشتری هرگز ویرایش نمی‌شود. اصلاح یعنی نسخهٔ جدید. هر نسخه شناسه و اثرانگشت (<bdi dir="ltr">sha256</bdi>) دارد، اما در بخش «جزئیات فنی نسخه» می‌ماند تا حواس طراح را از کار اصلی پرت نکند.</p></div>
+    <div><h3>بازخورد داخلی و قابل‌رؤیت برای مشتری</h3><p>هر بازخورد می‌تواند داخلی باشد یا برای مشتری دیده شود. فیلتر «قابل رؤیت برای مشتری» نشان می‌دهد دقیقاً چه چیزی به مشتری می‌رسد.</p></div>
+  </div>
+  <div class="tile t-sky" style="margin-top:3mm"><h3>تصمیم نهایی ویرایش نمی‌شود</h3><p style="margin:0">اگر تصمیمی عوض شد، تصمیم تازه ثبت می‌شود و تصمیم قبلی را با <bdi dir="ltr">supersedesId</bdi> جایگزین می‌کند. تاریخچه می‌ماند و «چرا عوض شد؟» جواب دارد.</p></div>
+  <figure><img src="img/d-decisions.jpg"><figcaption>دفتر تصمیم‌ها: برای هر تصمیم، «چرا؟»، ثبت‌کننده، نهایی‌کننده، نسخهٔ مربوط (v1 ← اعمال‌شده در v2) و بازخوردهای مرتبط دیده می‌شود.</figcaption></figure>
+  <div class="foot"><span>سنجاق · کیس استادی</span><span>۵</span></div>
+</section>
+
+<!-- ۶. تأیید مشتری -->
+<section class="page">
+  <span class="kicker">۰۵ · تأیید مشتری</span>
+  <h2>تأیید دومرحله‌ای و رسید ثبت‌شده</h2>
+  <div class="cols">
+    <div>
+      <p>مشتری بدون ورود به پنل استودیو، از یک لینک اختصاصی نسخهٔ منتشرشده را می‌بیند. دکمهٔ «تأیید این نسخه» مستقیم تأیید نمی‌کند؛ دیالوگی باز می‌شود که دقیقاً می‌گوید چه چیزی (تحویل‌دادنی، نسخه، شناسه) تأیید می‌شود و کاربر باید با یک چک‌باکس صریح موافقت کند.</p>
+      <p>بعد از تأیید، رسید صادر می‌شود: تأییدکننده، نسخهٔ تأییدشده، محدودهٔ توافق‌شده، زمان (به وقت تهران) و اثرانگشت نسخه. رسید فقط یک بار و فقط در Reducer ساخته می‌شود؛ دو کلیک پشت‌سرهم رسید دوم نمی‌سازد.</p>
+      <div class="tile t-mint"><h3>مرز اطلاعاتی با مشتری</h3><p style="margin:0">صفحه‌های مشتری فقط از یک Projection داده می‌گیرند. یادداشت داخلی، ساعت داخلی و طبقه‌بندی هرگز به آن‌ها نمی‌رسد و تست خودکار این مرز را می‌سنجد.</p></div>
+      <div class="tile t-sur" style="margin-top:4mm"><p class="note" style="margin:0">متن دیالوگ صریح می‌گوید این تأیید در سنجاق ثبت می‌شود و جایگزین امضای حقوقی قرارداد نیست؛ ادعای حقوقی نکرده‌ایم.</p></div>
+    </div>
+    <div class="phones"><img src="img/m-approve-1.jpg"><img src="img/m-receipt.jpg"></div>
+  </div>
+  <p class="note" style="margin-top:4mm">تصویرها از نمونهٔ ساختگی گرفته شده‌اند (نشان «نمونهٔ نمایشی» روی صفحه دیده می‌شود): دیالوگ تأیید و رسید ثبت‌شده.</p>
+  <div class="foot"><span>سنجاق · کیس استادی</span><span>۶</span></div>
+</section>
+
+<!-- ۷. تغییرات -->
+<section class="page">
+  <span class="kicker">۰۶ · تغییرات بعد از تأیید</span>
+  <h2>بعد از رسید، Baseline دست‌نخورده می‌ماند</h2>
+  <figure><img src="img/d-changes.jpg"><figcaption>قبل از تأیید مشتری، «ثبت درخواست تغییر» غیرفعال است و دلیلش نوشته شده: اصلاح نسخهٔ تأییدنشده در صفحهٔ بازبینی انجام می‌شود، نه اینجا.</figcaption></figure>
+  <p>سخت‌ترین بخش مسئله، تغییرهای دیرهنگام است. قاعدهٔ سنجاق ساده است: درخواست تغییر فقط بعد از رسید ساخته می‌شود و به Baseline و رسید مشخصی وصل می‌ماند. مسیر آن این است:</p>
+  <div class="chain" style="margin:4mm 0"><span style="background:var(--pink)">درخواست مشتری</span><span style="background:var(--lav)">پرسش و پاسخ</span><span style="background:var(--org)">طبقه‌بندی</span><span style="background:var(--sky)">ارزیابی</span><span style="background:var(--lime)">پیشنهاد</span><span style="background:var(--mint)">تصمیم</span></div>
+  <div class="grid2">
+    <div class="tile t-lime"><h3>اگر پیشنهاد رد شود</h3><p style="margin:0">Baseline و رسید بدون هیچ تغییری می‌مانند.</p></div>
+    <div class="tile t-mint"><h3>اگر پذیرفته شود</h3><p style="margin:0"><bdi dir="ltr">Baseline v2</bdi> ساخته می‌شود؛ هرگز Revision مستقیم روی Baseline قبلی.</p></div>
+  </div>
+  <p style="margin-top:4mm">نسخهٔ پیشنهاد (<bdi dir="ltr">ProposalVersion</bdi>) بعد از ارسال عوض نمی‌شود. نتیجه: بحث «این جزو قرارداد بود یا نه؟» روی داده انجام می‌شود، نه حافظه.</p>
+  <div class="foot"><span>سنجاق · کیس استادی</span><span>۷</span></div>
+</section>
+
+<!-- ۸. فرایند -->
+<section class="page">
+  <span class="kicker">۰۷ · فرایند</span>
+  <h2>پنج Milestone با توقف و تأیید صاحب محصول</h2>
+  <p>فاز ۴ (پروتوتایپ Medium-Fi) در پنج Milestone (<bdi dir="ltr">W1</bdi> تا <bdi dir="ltr">W5</bdi>) پیش رفت. پس از هر Milestone توقف می‌کردیم و پیش از ادامه تأیید صاحب محصول را می‌گرفتیم. فاز ۵ به High-Fi و سیستم طراحی اختصاص یافت.</p>
+  <table>
+    <tr><th>گام</th><th>چه شد</th><th>چه تصمیمی گرفته شد</th></tr>
+    <tr><td>منطق اول</td><td>دامنه و Reducer خالص و تست‌شده، پیش از UI</td><td>Guardها (قفل Baseline، نقش، idempotency) در Reducer بمانند، نه فقط در UI</td></tr>
+    <tr><td>پروتوتایپ Medium-Fi</td><td>چهار Flow کامل: بریف ← Baseline؛ نسخه و Pin ← تصمیم؛ تأیید ← رسید؛ تغییر</td><td>تمام داده ساختگی و صریحاً Mock اعلام شود</td></tr>
+    <tr><td>High-Fi و سیستم طراحی</td><td>توکن‌ها، پلهٔ تایپوگرافی، کامپوننت‌ها</td><td>اندازهٔ دلخواه ممنوع؛ همه‌چیز از توکن</td></tr>
+    <tr><td>بازبینی جهت بصری</td><td>پنج تصویر مرجع از صاحب محصول؛ دو طرح ترکیب و تأیید شد</td><td>کِرِمی، کاشی پاستلی، قرص مشکی، زنجیره به‌شکل زمان‌بندی</td></tr>
+    <tr><td>حسابرسی</td><td>ممیزی فنی و UX، رفع ایرادها در اولویت P1 تا P3</td><td>بخش بعد</td></tr>
+  </table>
+  <div class="grid2" style="margin-top:4mm">
+    <div class="tile t-pink"><h3>جهت بصری: از مشکی ساده به کاشی‌های پاستلی</h3><p style="margin:0;font-size:10.5pt;line-height:1.85">نسخهٔ اول فقط خنثی بود و زنجیره (ارزش اصلی) نمود بصری نداشت. بعد از بازخورد، رنگ‌ها معنا گرفتند: لیمویی = نیازمند اقدام، لاوندر = AI یا منتظر مشتری، آبی = نسخه، نارنجی = هشدار، نعنایی = تأییدشده، مرجانی = مسدودکننده.</p></div>
+    <div class="tile t-lav"><h3>گرافیک فقط از داده</h3><p style="margin:0;font-size:10.5pt;line-height:1.85">حلقه، نوار و زنجیره فقط از داده‌های واقعی ساخته می‌شوند. آمار یا درصد ساختگی ممنوع است. وضعیت هیچ‌گاه فقط با رنگ منتقل نمی‌شود و متن همراه آن است.</p></div>
+  </div>
+  <div class="foot"><span>سنجاق · کیس استادی</span><span>۸</span></div>
+</section>
+
+<!-- ۹. سیستم طراحی و فارسی -->
+<section class="page">
+  <span class="kicker">۰۸ · سیستم طراحی و زبان فارسی</span>
+  <h2>طراحی برای فارسی، نه ترجمهٔ یک رابط انگلیسی</h2>
+  <div class="sw"><i style="background:#ebeae6;border:1px solid #cfcec8"></i><i style="background:#f8f7f4;border:1px solid #cfcec8"></i><i style="background:#101015"></i><i style="background:#dcec6c"></i><i style="background:#cdc6f6"></i><i style="background:#f6c6e2"></i><i style="background:#bfdaf2"></i><i style="background:#ffbd8f"></i><i style="background:#c4ead3"></i><i style="background:#ff8f86"></i><i style="background:#6858f5"></i></div>
+  <p class="note">توکن‌های رنگ: بوم و سطح کِرِمی، مرکب، هفت پاستل معنادار و بنفش برند (فقط فوکوس و لوگو).</p>
+  <div class="grid2" style="margin-top:3mm">
+    <div>
+      <h3>تایپوگرافی</h3>
+      <p>Vazirmatn Variable با پلهٔ هفت‌مرحله‌ای (از ۱۲ تا ۳۶ پیکسل) و ارتفاع خط بالا (۱٫۴ تا ۱٫۸۵) برای خوانایی فارسی. سلسله‌مراتب با اندازه و وزن است، نه فقط رنگ.</p>
+      <h3>راست‌به‌چپ از ریشه</h3>
+      <p>ویژگی‌های منطقی CSS (<bdi dir="ltr">ms-</bdi>، <bdi dir="ltr">ps-</bdi>، <bdi dir="ltr">start-</bdi>)، شناسه‌های لاتین مثل <bdi dir="ltr">v1</bdi> جدا از جهت جمله، ارقام فارسی، تاریخ شمسی با منطقهٔ زمانی تهران و واحد «تومان» همیشه صریح.</p>
+    </div>
+    <div>
+      <h3>کامپوننت‌ها</h3>
+      <p>Button (قرص؛ اصلی مشکی)، Badge پاستلی با نقطهٔ وضعیت، Avatar، Segmented، StageTrack (زنجیره به‌شکل زمان‌بندی)، Card، Dialog بومی، فرم، Skeleton و EmptyState.</p>
+      <h3>گرافیک</h3>
+      <p>همهٔ تصویرسازی‌ها از یک مجموعه با پس‌زمینهٔ شفاف انتخاب شده‌اند تا روی هر رنگ کاشی بنشینند؛ تصویر هیچ‌وقت روی متن نمی‌افتد.</p>
+    </div>
+  </div>
+  <figure style="margin-top:2mm"><img src="img/m-client-review.jpg" style="max-width:50mm;margin:0 auto"><figcaption style="text-align:center">نمای مشتری روی موبایل (۳۹۰ پیکسل): کنترل‌های اصلی حداقل ۴۴ پیکسل.</figcaption></figure>
+  <div class="foot"><span>سنجاق · کیس استادی</span><span>۹</span></div>
+</section>
+
+<!-- ۱۰. QA و درس‌ها -->
+<section class="page">
+  <span class="kicker">۰۹ · کیفیت، محدودیت‌ها، قدم بعد</span>
+  <h2>آنچه سنجیده شد و آنچه هنوز نه</h2>
+  <div class="grid3" style="margin-bottom:5mm">
+    <div class="tile t-mint"><div class="num">۸۰</div><div class="lab">آزمون خودکار سبز (منطق Scope، Guardها، نسخه و Pin، تصمیم، رسید، مرز دادهٔ مشتری و سناریوی کامل چهار Flow)</div></div>
+    <div class="tile t-lav"><div class="num">۰</div><div class="lab">خطای axe (WCAG 2 A/AA) روی ۱۲ مسیر در سه عرض ۳۹۰، ۸۳۴ و ۱۴۴۰ پیکسل</div></div>
+    <div class="tile t-lime"><div class="num">۱۶</div><div class="lab">ایراد ثبت‌شده در حسابرسی اولیه (فنی ۱۴ از ۲۰، UX ۲۶ از ۴۰)؛ بیشترشان رفع شد و موارد باقی‌مانده در گزارش آمده است</div></div>
+  </div>
+  <div class="grid2">
+    <div>
+      <h3>نمونه‌ای از ایرادهای حسابرسی که رفع شد</h3>
+      <ul>
+        <li>عمل مخرب نمایشی بدون تأیید ← دیالوگ تأیید با پیامد صریح.</li>
+        <li>صفحهٔ ورود با ۴۵ انتخاب پیش از کار اصلی ← نقش‌ها و آواتار ساده‌شده.</li>
+        <li>شناسه و checksum در جایگاه اول بازبینی ← «جزئیات فنی» بازشونده.</li>
+        <li>هدف لمسی ۴۰ پیکسل ← حداقل ۴۴ برای کنترل‌های اصلی.</li>
+        <li>بستهٔ ۷۰۷ کیلوبایتی ← تقسیم بر اساس مسیر (ورودی ۲۷۳ + مشترک ۲۹۱).</li>
+      </ul>
+    </div>
+    <div>
+      <h3>محدودیت‌ها (صریح)</h3>
+      <ul>
+        <li>داده ساختگی است و Backend ندارد؛ ورود فقط نمایشی است و رمز بررسی یا ذخیره نمی‌شود.</li>
+        <li>با کاربر واقعی آزمون نشده؛ هیچ عدد زمان یا موفقیتی ادعا نمی‌شود.</li>
+        <li>Screen Reader واقعی، دستگاه واقعی و مرورگرهای دیگر بررسی نشده‌اند.</li>
+        <li>ویرایش هم‌زمان و حالت آفلاین پیاده نشده‌اند.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="tile t-sur" style="margin-top:3mm">
+    <h3>قدم‌های بعد</h3>
+    <p style="margin:0">آزمون قابلیت استفاده با چند استودیوی واقعی و سنجش همین پرسش‌ها: «چقدر طول می‌کشد تصمیم قبلی پیدا شود؟»؛ سپس Backend و احراز هویت واقعی، آزمون Screen Reader، و گسترش پنل مشتری.</p>
+  </div>
+  <div class="q" style="margin-top:6mm;font-size:12.5pt">درس اصلی: وقتی منطق دامنه جلوتر از UI ساخته شود و قواعد در Reducer بمانند، طراحی می‌تواند بدون ترس از شکستن اعتماد، بارها بازبینی شود.</div>
+  <div class="foot"><span>سنجاق · کیس استادی</span><span>۱۰</span></div>
+</section>
+
+</body>
+</html>
