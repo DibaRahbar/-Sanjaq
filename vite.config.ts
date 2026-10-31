@@ -2,13 +2,13 @@ import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-/** `vite build --mode pages`: انتشار روی GitHub Pages زیر مسیر `/Sanjaq/` (مسیریاب مرورگر با basename)
+/** `vite build --mode pages`: انتشار روی GitHub Pages زیر مسیر `/-Sanjaq/` (مسیریاب مرورگر با basename)
  * `vite build --mode static`: ساخت ایستا برای Artifact؛ همهٔ فایل‌ها (تصویر و فونت) داخل بسته، مسیریاب در حافظه */
 export default defineConfig(({ mode }) => {
   const isStatic = mode === 'static'
   const isPages = mode === 'pages'
   return {
-    base: isStatic ? './' : isPages ? '/Sanjaq/' : '/',
+    base: isStatic ? './' : isPages ? '/-Sanjaq/' : '/',
     build: isStatic
       ? { assetsInlineLimit: 4_000_000, cssCodeSplit: false, outDir: 'dist-static', rolldownOptions: { output: { inlineDynamicImports: true } } }
       : {},
